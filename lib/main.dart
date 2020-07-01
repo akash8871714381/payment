@@ -33,7 +33,7 @@ class _PaymentState extends State<Payment> {
 
   void openCheckout() {
     var options = {
-      'key': '',
+      'key': 'rzp_test_Wh0VxDyTQdsVcv',
       'amount': totalAmount * 100,
       'name': 'Digiblade',
       'external': {
@@ -73,7 +73,6 @@ class _PaymentState extends State<Payment> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               LimitedBox(
-                maxWidth: MediaQuery.of(context).size.width,
                 child: TextField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(hintText: "please Enter amount"),
@@ -87,7 +86,11 @@ class _PaymentState extends State<Payment> {
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(onPressed: () {}, child: Text("Payment")),
+              RaisedButton(
+                  onPressed: () {
+                    openCheckout();
+                  },
+                  child: Text("Payment")),
             ],
           ),
         ),
