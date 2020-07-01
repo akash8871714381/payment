@@ -48,16 +48,16 @@ class _PaymentState extends State<Payment> {
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    Fluttertoast.showToast(msg: "success" + response.paymentId);
+    Fluttertoast.showToast(msg: "success:" + response.paymentId);
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
     Fluttertoast.showToast(
-        msg: "error" + response.code.toString() + "." + response.message);
+        msg: "error:" + response.code.toString() + "." + response.message);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    Fluttertoast.showToast(msg: "external wallet" + response.walletName);
+    Fluttertoast.showToast(msg: "external wallet:" + response.walletName);
   }
 
   int totalAmount = 0;
